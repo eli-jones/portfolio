@@ -1,0 +1,336 @@
+@font-face {
+    font-family: "Black Chancery";
+    src: url('fonts/BLKCHCRY.ttf') format('truetype');
+}
+
+:root {
+    --dpurple: #3f2332;
+    --dgreen: #1f341c;
+    --gold: #C98934;
+    --cream: #d9d9d9;
+    --lpurple: #AC98B3;
+    --lgreen: #61602A;
+    --bgreen: #edede0;
+    --title: 'Black Chancery', 'Times New Roman', serif;
+    --body: 'Cormorant Garamond', 'Times New Roman', serif;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--dpurple);
+    background-image: url(images/background-1.png);
+    background-size: cover;
+    border: 1px solid rgba(217, 217, 217, 0.5);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+    
+nav {
+    bottom: 0;
+    left: 100;
+    position: fixed;
+    background-color: var(--cream);
+    width: 100%;
+    border-top: 3px solid var(--dgreen);
+    box-shadow: 0px -15px 50px var(--dpurple);
+    z-index: 9;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    margin-left: -1.5rem;
+    margin-right: 1rem;
+}
+
+li {
+    list-style: none;
+    color: var(--dgreen);
+}
+
+.toggle {
+    all: unset;
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--lgreen);
+    border-radius: 50%;
+    cursor: pointer;
+    bottom: 0;
+    left: 100;
+    margin: 3rem;
+    position: fixed;
+    transition: 0.25s ease-out;
+    z-index: 10;
+}
+    
+.toggle::before {
+    margin: 1px 10px;
+    position: absolute;
+    content: '✷';
+    color: var(--gold);
+    font-size: 2rem;
+    transition: 0.25s ease-out;
+}
+    
+.toggle:hover:before {
+    color: var(--cream);
+}
+    
+.toggle:checked:before {
+    font-size: 2.5rem;
+    margin: -3px 8px;
+    transform: rotate(90deg);
+}
+    
+.toggle:checked {
+    transform: translateY(-50px);
+}
+
+.toggle:not(:checked) + nav {
+    opacity: 0;
+}
+
+.toggle:checked + nav {
+    opacity: 100;
+    animation: slideUp 0.25s ease-out;
+}
+
+h1, h2, h3 {
+    font-family: var(--title);
+    color: var(--cream);
+}
+
+h1{
+    font-size: 2rem;
+    display: none;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h4 {
+    font-family: var(--body);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+p {
+    font-family: var(--body);
+    color: var(--cream);
+}
+    
+a {
+    font-family: var(--body);
+    display: block;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 7rem;
+    color: var(--dgreen);
+    border: 1px solid var(--dgreen);
+    padding: 0.5rem 1rem;
+}
+
+a:hover {
+    font-weight: 700;
+    border: 1px solid var(--dgreen);
+    transition: all 0.1s;
+}
+
+a:active {
+    background-color: var(--bgreen);
+    transition: background 0.1s;
+}
+
+.star {
+    z-index: 0;
+    opacity: 15%;
+    position: fixed;
+}
+
+.purple {
+    top: 0;
+    left: 0;
+    transform: scale(130%) translateX(-15%) translateY(-20%);
+}
+
+.gold {
+    bottom: 0;
+    right: 0;
+    transform: scale(170%) translateX(15%) translateY(20%);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: -4rem auto 1rem auto;
+    width: 75%;
+}
+
+.home {
+    scroll-snap-align: start;
+    padding: 3rem 2rem;
+    height: 100vh;
+}
+
+.ph {
+    scroll-snap-align: start;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+}
+
+.work {
+    width: 80% !important;
+    margin: auto;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.container {
+    scroll-snap-align: start;
+    display: none;
+    z-index: 9;
+}
+    
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background: var(--cream);
+    margin: 6rem auto;
+    padding: 0 0 1rem 0;
+}
+    
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.card h3, .card p {
+    color: var(--dgreen);
+    width: 87%;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+.card a {
+    margin: 2rem auto 0.5rem auto;
+    width: 13rem;
+}
+
+.contact {
+    scroll-snap-align: start;
+    margin-top: 1rem;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cream);
+    padding: 1rem;
+    border: var(--dgreen) 1px solid;
+    box-shadow: 5px -5px 50px var(--dpurple);
+    z-index: 8;
+}
+    
+label {
+    font-family: var(--body);
+    color: var(--dgreen);
+    margin-top: 0.75rem;
+    margin-bottom: -0.75rem;
+}
+
+input[type='text'], input[type='email'], textarea {
+    font-family: var(--body);
+    font-style: italic;
+    background-color: var(--cream);
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+    border-bottom: var(--dgreen) 1px solid;
+}
+    
+textarea {
+    resize: none;
+    height: 5rem;
+}
+    
+input[type='submit'] {
+    font-family: var(--title);
+    text-align: center;
+    width: 35%;
+    margin: 1.5rem auto;
+    padding: 0.5rem 0.25rem;
+    background-color: var(--cream);
+    border: var(--dgreen) 1px solid;
+}
+
+input[type='submit']:hover {
+    font-weight: 700;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+input[type='submit']:active {
+    background-color: var(--bgreen);
+    transition: background 0.1s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+
+@media only screen and (min-width: 451px) {
+    .nav ul{
+        width: 40%;
+        margin: 1rem auto;
+    }
+    .home {
+        width: 50%;
+    }
+    .work {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .contact {
+        width: 25%;
+        
+    }
+}

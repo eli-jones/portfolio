@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+    
+<body>
+  <header>
+      <h1>Elizabeth Jones</h1>
+      <input type="checkbox" class="toggle"></input>
+        <nav class="nav">
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">Work</a></li>
+              <li><a href="/">Contact</a></li>
+          </ul>
+        </nav>
+  </header>
+  
+  <section class="home">
+      <img src="images/purple-star.png" class="star purple">
+      <img src="images/gold-star.png" class="star gold">
+      <h2>Welcome</h2>
+      <p>My name is Elizabeth. I'm a front end web designer, and you have found you're way to my portfolio. If you want to get in touch, please use the contact form.</p>
+  </section>
+
+  <section class="ph">
+      <p>Coming Soon.</p>
+  </section>
+    
+  <section class="work">
+      <div class="container">
+        <div class="card">
+          <img src="images/fem-ref.PNG" alt="Sign Up Form">
+          <div class="container"> 
+             <h3>Design Challenges</h3>
+             <p>HTML | CSS | JS</p>
+             <a href="/">See More</a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card">
+          <img src="images/cc-profile.PNG" alt="Codecademy Profile">
+          <div class="container">
+             <h3>Front End Web Design Certification</h3>
+             <p>HTML | CSS | JS</p>
+             <a href="/">See More</a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card">
+          <img src="images/gh-profile.PNG" alt="Github Profile">
+          <div class="container">
+             <h3>Work Repositories</h3>
+             <p>HTML | CSS | JS</p>
+             <a href="/">See More</a>
+          </div>
+        </div>
+      </div>
+  </section>
+    
+  <section class="contact">
+      <h2>Contact</h2>
+      <form method="post">
+          <label name="name">Name</label>
+          <input type="text" name="name" class="name" />
+          <label name="email">Email</label>
+          <input type="email" name="email" class="email" />
+          <label name="message">Your Message</label>
+          <textarea name="message" class="message"></textarea>
+          <input type="submit" name="submit" class="submit" value="Send" />
+      </form>
+  </section>
+    
+</body>
+</html>
