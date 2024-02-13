@@ -29,7 +29,7 @@ body {
     justify-content: center;
     align-content: center;
     background-color: var(--dpurple);
-    background-image: url(images/background-1.png);
+    background-image: url(images/background-1.jpg);
     background-size: cover;
     border: 1px solid rgba(217, 217, 217, 0.5);
 }
