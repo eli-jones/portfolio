@@ -1,6 +1,8 @@
 @font-face {
     font-family: "Black Chancery";
     src: url('fonts/BLKCHCRY.ttf') format('truetype');
+    font-family: "CAT Childs";
+    src: url('fonts/CATChilds.ttf') format('truetype');
 }
 
 :root {
@@ -11,7 +13,7 @@
     --lpurple: #AC98B3;
     --lgreen: #61602A;
     --bgreen: #edede0;
-    --title: 'Black Chancery', 'Times New Roman', serif;
+    --title: 'CAT Childs', 'Times New Roman', serif;
     --body: 'Cormorant Garamond', 'Times New Roman', serif;
 }
 
@@ -45,6 +47,7 @@ nav {
     position: fixed;
     background-color: var(--cream);
     width: 100%;
+    min-height: 8vh;
     border-top: 3px solid var(--dgreen);
     box-shadow: 0px -15px 50px var(--dpurple);
     z-index: 9;
@@ -64,12 +67,18 @@ li {
     color: var(--dgreen);
 }
 
+nav a {
+    width: 7rem;
+}
+
 .toggle {
     all: unset;
     position: relative;
     width: 3rem;
     height: 3rem;
     background-color: var(--lgreen);
+    box-shadow: -5px -5px 40px var(--dpurple),
+                5px 5px 40px var(--dpurple);
     border-radius: 50%;
     cursor: pointer;
     bottom: 0;
@@ -81,7 +90,7 @@ li {
 }
     
 .toggle::before {
-    margin: 1px 10px;
+    margin: 1px 11px;
     position: absolute;
     content: '✷';
     color: var(--gold);
@@ -95,7 +104,7 @@ li {
     
 .toggle:checked:before {
     font-size: 2.5rem;
-    margin: -3px 8px;
+    margin: -2px 9px;
     transform: rotate(90deg);
 }
     
@@ -112,7 +121,7 @@ li {
     animation: slideUp 0.25s ease-out;
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-family: var(--title);
     color: var(--cream);
 }
@@ -128,16 +137,13 @@ h2 {
 }
 
 h3 {
-    font-size: 1rem;
-}
-
-h4 {
     font-family: var(--body);
     font-size: 1rem;
     font-style: italic;
 }
 
 p {
+    font-size: 1rem;
     font-family: var(--body);
     color: var(--cream);
 }
@@ -149,21 +155,20 @@ a {
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    width: 7rem;
     color: var(--dgreen);
     border: 1px solid var(--dgreen);
     padding: 0.5rem 1rem;
 }
 
 a:hover {
-    font-weight: 700;
-    border: 1px solid var(--dgreen);
+    background-color: var(--bgreen);
     transition: all 0.1s;
 }
 
 a:active {
-    background-color: var(--bgreen);
-    transition: background 0.1s;
+    font-weight: 700;
+    border: 2px solid var(--dgreen);
+    transition: all 0.1s;
 }
 
 .star {
@@ -184,6 +189,32 @@ a:active {
     transform: scale(170%) translateX(15%) translateY(20%);
 }
 
+.white {
+    height: auto;
+    opacity: 6%;
+}
+
+.one {
+    width: 13%;
+    top: 80%;
+    left: 10%;
+    animation: spin 20s infinite linear;
+}
+
+.two {
+    width: 8%;
+    top: 68%;
+    left: 35%;
+    animation: spin 20s infinite linear;
+}
+
+.three {
+    width: 20%;
+    top: 13%;
+    left: 65%;
+    animation: spin 20s infinite linear reverse;
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -199,7 +230,12 @@ section {
     height: 100vh;
 }
 
+.home h2, p {
+    animation: transIn 0.5s;
+}
+
 .ph {
+    display: none;
     scroll-snap-align: start;
     height: 100vh;
     margin: auto;
@@ -207,26 +243,34 @@ section {
 }
 
 .work {
+    scroll-snap-align: start;
+    height: 100vh;
     width: 80% !important;
-    margin: auto;
+    margin: 8rem auto 1rem auto;
     flex-direction: column;
     align-content: space-between;
 }
 
 .container {
-    scroll-snap-align: start;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     z-index: 9;
+    animation: transIn linear 0.5s;
+}
+
+.container a {
+    padding: 0;
 }
     
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    text-align: center;
     background: var(--cream);
-    margin: 6rem auto;
+    width: 70vw;
+    height: 24.5rem;
     padding: 0 0 1rem 0;
+    box-shadow: -5px -5px 50px var(--dpurple),
+                5px 5px 50px var(--dpurple);
 }
     
 .card img {
@@ -235,7 +279,7 @@ section {
     margin-bottom: 0.5rem;
 }
 
-.card h3, .card p {
+.card h3 {
     color: var(--dgreen);
     width: 87%;
     margin: auto;
@@ -243,8 +287,19 @@ section {
 }
 
 .card a {
-    margin: 2rem auto 0.5rem auto;
-    width: 13rem;
+    margin: 1rem auto;
+    width: 12rem;
+}
+
+.card:hover {
+    background-color: var(--bgreen);
+    transition: all 0.1s;
+}
+
+.card:active {
+    font-weight: 700;
+    border: 2px solid var(--dgreen);
+    transition: all 0.1s;
 }
 
 .contact {
@@ -254,14 +309,23 @@ section {
     height: 100vh;
 }
 
+.contact h2 {
+    margin-top: -2rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
     background-color: var(--cream);
     padding: 1rem;
     border: var(--dgreen) 1px solid;
-    box-shadow: 5px -5px 50px var(--dpurple);
+    box-shadow: -5px -5px 50px var(--dpurple),
+                5px 5px 50px var(--dpurple);
     z-index: 8;
+}
+
+form, .contact h2 {
+    animation: transIn 0.5s;
 }
     
 label {
@@ -297,14 +361,33 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-    font-weight: 700;
-    transition: all 0.1s;
+    background-color: var(--bgreen);
+    transition: background 0.1s;
     cursor: pointer;
 }
 
 input[type='submit']:active {
-    background-color: var(--bgreen);
-    transition: background 0.1s;
+    font-weight: 700;
+    border: var(--dgreen) 2px solid;
+    transition: all 0.1s;
+}
+
+.small {
+    text-align: center;
+    color: var(--lgreen);
+    font-size: 0.85rem;
+}
+
+.small a {
+    display: contents !important;
+    padding: none;
+    margin: none;
+    border: none;
+    text-transform: none;
+}
+
+.small a:hover {
+    font-weight: 700;
 }
 
 @keyframes slideUp {
@@ -316,21 +399,104 @@ input[type='submit']:active {
     }
 }
 
+@keyframes transIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-@media only screen and (min-width: 451px) {
-    .nav ul{
-        width: 40%;
+@keyframes spin {
+    0% {
+        opacity: 6%;
+        transform: rotateZ(0);
+    }
+    50% {
+        opacity: 12%;
+        transform: rotateZ(90deg);
+    }
+    100% {
+        opacity: 6%;
+        transform: rotateZ(180deg);
+    }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 799px) {
+    nav ul{
+        min-width: 400px;
+        width: 80%;
         margin: 1rem auto;
     }
+    nav li:first-child {
+        margin-left: -2.5rem;
+    } 
+    .container {
+        margin: auto;
+    }
+    .card {
+        width: 45vw;
+        height: auto;
+    }
+    .card h3 {
+        padding-bottom: 1rem;
+    }
+    .contact {
+        width: 80%;
+    }
+    .contact h2 {
+        margin-top: -6rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    nav ul {
+        width: 40%;
+        min-width: 400px;
+        margin: 1rem auto;
+    }
+    nav li:first-child {
+        margin-left: -2.5rem;
+    } 
     .home {
         width: 50%;
     }
     .work {
         flex-direction: row;
         justify-content: space-between;
+        align-content: space-around;
+    }
+    .container {
+        margin: auto;
+    }
+    .card {
+        width: 45vw;
+        max-width: 300px;
+        height: auto;
+    }
+    .card h3 {
+        padding-bottom: 1rem;
     }
     .contact {
+        min-width: 300px;
         width: 25%;
-        
+    }
+    .contact h2 {
+        margin-top: -5rem;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    p {
+        font-size: 2rem;
     }
 }
