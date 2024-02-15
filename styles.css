@@ -2,7 +2,7 @@
     font-family: "Black Chancery";
     src: url('/fonts/BLKCHCRY.ttf') format('truetype');
     font-family: "CAT Childs";
-    src: url('/portfolio/fonts/CATChilds.ttf') format('truetype');
+    src: url('./fonts/CATChilds.ttf') format('truetype');
 }
 
 :root {
