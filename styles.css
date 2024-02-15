@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Black Chancery";
-    src: url('/fonts/BLKCHCRY.ttf') format('truetype');
+    src: url('./fonts/BLKCHCRY.ttf') format('truetype');
     font-family: "CAT Childs";
     src: url('./fonts/CATChilds.ttf') format('truetype');
 }
