@@ -127,6 +127,11 @@ h1, h2 {
 }
 
 h1{
+    font-size: 2rem;
+    display: none;
+}
+
+h2 {
     font-size: 6rem;
     text-align: center;
 }
@@ -225,16 +230,15 @@ section {
     height: 100vh;
 }
 
-.home h2, p {
+.home h2 {
     animation: transIn 0.5s;
+    text-align: center;
 }
 
-.ph {
-    display: none;
-    scroll-snap-align: start;
-    height: 100vh;
-    margin: auto;
-    text-align: center;
+
+.home p {
+    animation: transIn 0.5s;
+    text-align: justify;
 }
 
 .work {
@@ -421,7 +425,7 @@ input[type='submit']:active {
     }
 }
 
-@media only screen and (min-width: 451px) and (max-width: 799px) {
+@media only screen and (min-width: 400px) and (max-width: 699px) {
     nav ul{
         min-width: 400px;
         width: 80%;
@@ -429,18 +433,30 @@ input[type='submit']:active {
     }
     nav li:first-child {
         margin-left: -2.5rem;
-    } 
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .work {
+        margin: auto;
+        min-height: 200vh;
+    }
     .container {
         margin: auto;
+        height: 5rem;
+    }
+    .card-page {
+        height: 100vh;
     }
     .card {
-        width: 45vw;
-        height: auto;
+        width: 70vw; 
     }
     .card h3 {
-        padding-bottom: 1rem;
+        width: 80%;
+        margin-bottom: 1rem;
     }
     .contact {
+        margin-top: 10rem;
         width: 80%;
     }
     .contact h2 {
@@ -450,11 +466,11 @@ input[type='submit']:active {
         font-size: 1.5rem;
     }
     h2 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 700px) {
     nav ul {
         width: 40%;
         min-width: 400px;
