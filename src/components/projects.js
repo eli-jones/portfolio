@@ -30,8 +30,8 @@ function Projects() {
             }
         }
     })
-
-    return swiper;
+    
+    swiper;
     
     return (
         <div className='swiper'>
