@@ -1,38 +1,353 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: "Black Chancery";
+    src: url('./assets/fonts/BLKCHCRY.woff2') format('woff2'),
+         url('./assets/fonts/BLKCHCRY.TTF') format('ttf');
+    font-family: "CAT Childs";
+    src: url('./assets/fonts/CATChilds.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --dpurple: #3f2332;
+    --dgreen: #1f341c;
+    --gold: #C98934;
+    --cream: #d9d9d9;
+    --lpurple: #AC98B3;
+    --lgreen: #61602A;
+    --bgreen: #edede0;
+    --title: 'Black Chancery', 'Cat Childs', 'Times New Roman', serif;
+    --body: 'Cormorant Garamond', 'Times New Roman', serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+    scroll-snap-type: y mandatory;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+* {
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--dpurple);
+    background-image: url(./assets/images/background-1.jpg);
+    background-size: cover;
+    border: 1px solid rgba(217, 217, 217, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+    display: flex;
+    justify-content: center;
+}
+ 
+h1, h2 {
+    font-family: var(--title);
+    color: var(--cream);
+}
+
+h1{
+    font-size: 2rem;
+    display: none;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    font-family: var(--body);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+p {
+    font-size: 1rem;
+    font-family: var(--body);
+    color: var(--cream);
+}
+    
+a {
+    font-family: var(--body);
+    display: block;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dgreen);
+    border: 1px solid var(--dgreen);
+    padding: 0.5rem 1rem;
+}
+
+a:hover {
+    background-color: var(--bgreen);
+    transition: all 0.1s;
+}
+
+a:active {
+    font-weight: 700;
+    border: 2px solid var(--dgreen);
+    transition: all 0.1s;
+}
+
+.star {
+    z-index: 0;
+    opacity: 25%;
+    position: fixed;
+}
+
+.purple {
+    top: 0;
+    left: 0;
+    transform: scale(130%) translateX(-15%) translateY(-20%);
+}
+
+.gold {
+    bottom: 0;
+    right: 0;
+    transform: scale(170%) translateX(15%) translateY(20%);
+}
+
+.white {
+    height: auto;
+    opacity: 6%;
+}
+
+.one {
+    width: 13%;
+    top: 80%;
+    left: 10%;
+    animation: spin 20s infinite linear;
+}
+
+.two {
+    width: 8%;
+    top: 68%;
+    left: 35%;
+    animation: spin 20s infinite linear;
+}
+
+.three {
+    width: 20%;
+    top: 13%;
+    left: 65%;
+    animation: spin 20s infinite linear reverse;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: -4rem auto 1rem auto;
+    width: 75%;
+}
+
+.home {
+    scroll-snap-align: start;
+    padding: 3rem 2rem;
+    height: 100vh;
+    max-width: 40rem;
+}
+
+.home h2, p {
+    animation: transIn 0.5s;
+}
+
+.ph {
+    display: none;
+    scroll-snap-align: start;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+}
+
+.work {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 80% !important;
+    margin: 8rem auto 1rem auto;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 9;
+    animation: transIn linear 0.5s;
+}
+
+.container a {
+    padding: 0;
+}
+
+.contact {
+    scroll-snap-align: start;
+    margin-top: 1rem;
+    justify-content: center;
+    height: 100vh;
+    max-width: 15rem;
+}
+
+.contact h2 {
+    margin-top: -2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cream);
+    padding: 1rem;
+    border: var(--dgreen) 1px solid;
+    z-index: 8;
+}
+
+form, .contact h2 {
+    animation: transIn 0.5s;
+}
+    
+label {
+    font-family: var(--body);
+    color: var(--dgreen);
+    margin-top: 0.75rem;
+    margin-bottom: -0.75rem;
+}
+
+input[type='text'], input[type='email'], textarea {
+    font-family: var(--body);
+    font-style: italic;
+    background-color: var(--cream);
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+    border-bottom: var(--dgreen) 1px solid;
+}
+    
+textarea {
+    resize: none;
+    height: 5rem;
+}
+    
+input[type='submit'] {
+    font-family: var(--title);
+    text-align: center;
+    width: 35%;
+    margin: 1.5rem auto;
+    padding: 0.5rem 0.25rem;
+    background-color: var(--cream);
+    border: var(--dgreen) 1px solid;
+}
+
+input[type='submit']:hover {
+    background-color: var(--bgreen);
+    transition: background 0.1s;
+    cursor: pointer;
+}
+
+input[type='submit']:active {
+    font-weight: 700;
+    border: var(--dgreen) 2px solid;
+    transition: all 0.1s;
+}
+
+.small {
+    text-align: center;
+    color: var(--lgreen);
+    font-size: 0.85rem;
+}
+
+.small a {
+    display: contents !important;
+    padding: none;
+    margin: none;
+    border: none;
+    text-transform: none;
+}
+
+.small a:hover {
+    font-weight: 700;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes transIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        opacity: 6%;
+        transform: rotateZ(0);
+    }
+    50% {
+        opacity: 12%;
+        transform: rotateZ(90deg);
+    }
+    100% {
+        opacity: 6%;
+        transform: rotateZ(180deg);
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    .container {
+        margin: auto;
+    }
+    .contact {
+        width: 80%;
+    }
+    .contact h2 {
+        margin-top: -6rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .home {
+        width: 50%;
+    }
+    .work {
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: space-around;
+    }
+    .container {
+        margin: auto;
+    }
+    .contact {
+        min-width: 300px;
+        width: 25%;
+    }
+    .contact h2 {
+        margin-top: -5rem;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    p {
+        font-size: 2rem;
+    }
 }
