@@ -16,9 +16,11 @@ function Projects() {
             pagination={{
                 clickable: true
             }}
+            modules={[Pagination]}
             grabCursor={true}
             loop={true}
-            modules={[Pagination]}
+            shortSwipes={false}
+            
             breakpoints={{
             500: {
                 slidesPerView: 1,
