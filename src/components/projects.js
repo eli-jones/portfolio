@@ -18,7 +18,6 @@ function Projects() {
                 clickable: true
             }}
             grabCursor={true}
-            direction={horizontal}
             loop={true}
             modules={[Pagination]}
             breakpoints={{
