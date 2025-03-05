@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -14,11 +14,13 @@ function Projects() {
     return (
         <Swiper
             cssMode={true}
-            pagination={true}
+            pagination={{
+                clickable={true}
+            }}
             grabCursor={true}
             direction={horizontal}
             loop={true}
-            modules={Pagination}
+            modules={[Pagination]}
             breakpoints={{
             500: {
                 slidesPerView: 1,
