@@ -15,7 +15,7 @@ function Projects() {
         <Swiper
             cssMode={true}
             pagination={{
-                clickable={true}
+                clickable: true
             }}
             grabCursor={true}
             direction={horizontal}
