@@ -13,7 +13,6 @@ function Projects() {
     
     return (
         <Swiper
-            cssMode={true}
             pagination={{
                 clickable: true
             }}
@@ -32,9 +31,9 @@ function Projects() {
             }}
             className='swiper'
         >
-            <a href='https://eli-jones-jammming.netlify.app' target='blank'><SwiperSlide className='swiper-slide'><img src={jamming} alt='Jamming app'/><p>Jamming App ~ Spotify API</p></SwiperSlide></a>
-            <a href='https://eli-jones-bhr.netlify.app/' target='blank'><SwiperSlide className='swiper-slide'><img src={bhr} alt='Pet Rescue Site'/><p>Pet Rescue Site ~ React</p></SwiperSlide></a>
-            <a href='https://eli-jones-weather.netlify.app/' target='blank'><SwiperSlide className='swiper-slide'><img src={weather} alt='Weather App'/><p>Weather App ~ Open Weather API</p></SwiperSlide></a>
+            <SwiperSlide className='swiper-slide'><a href='https://eli-jones-jammming.netlify.app' target='blank'><img src={jamming} alt='Jamming app'/><p>Jamming App ~ Spotify API</p></a></SwiperSlide>
+            <SwiperSlide className='swiper-slide'><a href='https://eli-jones-bhr.netlify.app/' target='blank'><img src={bhr} alt='Pet Rescue Site'/><p>Pet Rescue Site ~ React</p></a></SwiperSlide>
+            <SwiperSlide className='swiper-slide'><a href='https://eli-jones-weather.netlify.app/' target='blank'><img src={weather} alt='Weather App'/><p>Weather App ~ Open Weather API</p></a></SwiperSlide>
         </Swiper>
     )
     
