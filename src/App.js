@@ -33,7 +33,7 @@ function App() {
     
   <section className="contact">
       <h2>Contact</h2>
-      <form method="post" action="https://forms.un-static.com/forms/0bb0aaa270a6ad697c25925285cf46e08584b008">
+      <form method="post" action="https://forms.un-static.com/forms/c58a04998f57acced8d7a0744e343747422dfbb4">
           <label name="name">Name</label>
           <input type="text" name="name" className="name" />
           <label name="email">Email</label>
