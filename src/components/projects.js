@@ -29,6 +29,7 @@ function Projects() {
             650: {
                 slidesPerView: 3,
                 spaceBetween: 60,
+            }
             }}
             className='swiper'
         >
